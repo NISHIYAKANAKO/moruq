@@ -1,44 +1,44 @@
 (function ($) {
     'use strict';
-   
+
     //合計問題数
     let $questionTotalNum = 5;
-   
+
     /* -----------------------------------------------
       県庁所在地クイズ
     -------------------------------------------------- */
     const prefecturalCapital = [
       {
         id: "01",
-        question: "１問目",
-        answer01: "あああああ",
-        answer02: "いいいいい",
-        answer03: "ううううう",
-        answer04: "えええええ",
+        question: "次の文章はデザインの４原則のうち何に当たるでしょうか？【要素に区別を付けること。ページ画面上の要素にメリハリがつき、視覚的に面白さをつくり出すことにも役立つ】",
+        answer01: "コントラスト",
+        answer02: "近接",
+        answer03: "反復",
+        answer04: "整列",
       },
       {
         id: "02",
-        question: "２問目",
-        answer01: "テスト１が答え",
-        answer02: "テスト２",
-        answer03: "テスト３",
-        answer04: "テスト４",
+        question: "次の文章はデザインの４原則のうち何に当たるでしょうか？【関連する項目を物理的にまとめてグループ化すること。関連する項目を近づけることで、それらが関連することを視覚的に表現することができます。】",
+        answer01: "近接",
+        answer02: "コントラスト",
+        answer03: "反復",
+        answer04: "整列",
       },
       {
         id: "03",
-        question: "Aが答えになりますけどどうでしょうか",
-        answer01: "AAAAA",
-        answer02: "BBBBB",
-        answer03: "CCCCC",
-        answer04: "DDDDD",
+        question: "次の文章はデザインの４原則のうち何に当たるでしょうか？【ページ上のすべての要素を意識的に整えて配列すること。そうすることで要素が互いに関連し、一体性を持ちます】",
+        answer01: "整列",
+        answer02: "コントラスト",
+        answer03: "反復",
+        answer04: "近接",
       },
       {
         id: "04",
-        question: "４問目の問題でございます",
-        answer01: "１１１１１が答え",
-        answer02: "２２２２２",
-        answer03: "３３３３３",
-        answer04: "４４４４４",
+        question: "次の文章はデザインの４原則のうち何に当たるでしょうか？【デザイン上の特徴を作品全体を通して繰り返すことです。フォント、色、配置などの特徴を、作品全体で繰り返し使うことで、視覚的な一貫性が生まれ】",
+        answer01: "反復",
+        answer02: "コントラスト",
+        answer03: "近接",
+        answer04: "整列",
       },
       {
         id: "05",
@@ -49,7 +49,7 @@
         answer04: "モッツァレラチーズ",
       },
     ];
-   
+  
     //質問をランダムにする
     function shuffleQuiz(array) {
       for (let i = (array.length - 1); 0 < i; i--) {
@@ -62,38 +62,38 @@
     }
     let quizId = ["01", "02", "03", "04", "05"];
     shuffleQuiz(quizId);
-   
+
     //現在の質問数
     let $currentNum = 0;
-   
+
     //得点
     let $pointPerCorrect = 10;
-   
+
     let questionObject = (function () {
       let Obj = function ($target) {
-   
+
         //質問の番号
         this.$questionNumber = $target.find('.quiz-question-number');
-   
+
         //質問文
         this.$questionName = $target.find('.quiz-question');
-   
+
         //選択肢ボタン
         this.$questionButton = $target.find('.quiz-button');
         this.$button01 = $target.find('.button01');
         this.$button02 = $target.find('.button02');
         this.$button03 = $target.find('.button03');
         this.$button04 = $target.find('.button04');
-   
+
         //選択肢のテキスト
         this.$answer01 = $target.find('.quiz-text01');
         this.$answer02 = $target.find('.quiz-text02');
         this.$answer03 = $target.find('.quiz-text03');
         this.$answer04 = $target.find('.quiz-text04');
-   
+
         //score
         this.$score = $target.find('.score-wrap .score');
-   
+
         this.init();
       };
       Obj.prototype = {
@@ -105,7 +105,7 @@
         event: function () {
           let _this = this;
           let score = 0;
-   
+
           //ウインドウ読み込み時
           $(window).on('load', function () {
             //value取得
@@ -117,19 +117,19 @@
             //回答のシャッフル
             _this.shuffleAnswer($('.quiz-answer'));
           });
-   
+
           //button クリック
           this.$questionButton.on("click", function () {
-   
+
             if ($(this).hasClass('button01')) {
               $(this).parents('.quiz-answer').addClass('is-correct');
               score = score + $pointPerCorrect;
             } else {
               $(this).parents('.quiz-answer').addClass('is-incorrect');
             }
-   
+
             $(this).addClass('is-checked');
-   
+
             if ($currentNum + 1 == $questionTotalNum) {
               setTimeout(function () {
                 $('.finish').addClass('is-show');
@@ -139,20 +139,20 @@
               setTimeout(function () {
                 //現在の数字の更新
                 $currentNum = $currentNum + 1;
-   
+
                 //次の質問番号を取得
                 let value = quizId[$currentNum];
-   
+
                 //次の質問を取得
                 let nextQuestion = _this.searchQuestion(value);
-   
+
                 //次の質問に切り替える
                 _this.changeQuestion(nextQuestion);
-   
+
                 //クラスを取る
                 _this.$questionButton.removeClass('is-checked');
                 $('.quiz-answer').removeClass('is-correct').removeClass('is-incorrect');
-   
+
                 //回答のシャッフル
                 _this.shuffleAnswer($('.quiz-answer'));
    
