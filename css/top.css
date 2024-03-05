@@ -1,0 +1,395 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500&display=swap");
+
+html,
+.btn {
+  font-family: "Noto Sans JP", "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", Meiryo, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+html {
+  color: #231815;
+  font-size: 16px;
+  line-height: 1.6;
+  word-break: break-all;
+  line-break: strict;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+    background: #ecfffc;
+    margin: 0;
+    text-align: center;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+.btn,
+a.btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+a.btn-border {
+  margin-bottom: 12px;
+  padding: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border-radius: 0;
+}
+
+a.btn-border span {
+  position: relative;
+  display: block;
+  padding: 1.25rem 3rem;
+
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 0.5rem;
+  background: #fff;
+}
+
+a.btn-border:before {
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 14px;
+  content: "";
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border: 2px solid #000;
+  border-top: 1px solid #000;
+  border-radius: 0 0 0.5rem 0.5rem;
+  background-image: -webkit-repeating-linear-gradient(
+    135deg,
+    #000,
+    #000 1px,
+    transparent 2px,
+    transparent 5px
+  );
+  background-image: repeating-linear-gradient(
+    -45deg,
+    #000,
+    #000 1px,
+    transparent 2px,
+    transparent 5px
+  );
+  background-size: 7px 7px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+a.btn-border:hover {
+  -webkit-transform: translate(0, 3px);
+  transform: translate(0, 3px);
+}
+
+a.btn-border:hover:before {
+  bottom: -5px;
+}
+
+a.btn-border:active {
+  -webkit-transform: translate(0, 7px);
+  transform: translate(0, 7px);
+}
+
+a.btn-border:active:before {
+  bottom: -1px;
+}
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500&display=swap");
+/* -----------------------------------------------
+* Plugins エントリーポイント
+-------------------------------------------------- */
+/*------------------------------------------------------------------------------
+  reset PC
+------------------------------------------------------------------------------*/
+html,
+input,
+textarea,
+select,
+button {
+  font-family: "Noto Sans JP", "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", Meiryo, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+html {
+  color: #231815;
+  font-size: 16px;
+  line-height: 1.6;
+  word-break: break-all;
+  line-break: strict;
+}
+
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+img {
+  border: 0;
+  margin: 0;
+  vertical-align: top;
+  max-width: 100%;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+input,
+select,
+textarea,
+button {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+::-webkit-input-placeholder {
+  color: #ccc;
+}
+
+:-ms-input-placeholder {
+  color: #ccc;
+}
+
+::-ms-input-placeholder {
+  color: #ccc;
+}
+
+::-moz-placeholder {
+  color: #ccc;
+}
+
+::placeholder {
+  color: #ccc;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+label {
+  cursor: pointer;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  display: block;
+}
+
+.inner-block {
+  position: relative;
+  width: calc(100% - 60px);
+  margin: 0 auto;
+}
+
+#wrapper {
+  position: relative;
+}
+
+dl,
+dt,
+dd {
+  padding: 0;
+  margin: 0;
+}
+@font-face {
+  src: url(../font/MaboroshinoNijimiMincho.otf) format("opentype");
+  font-family: "nijimi";
+  font-weight: 400;
+  font-display: swap;
+}
+.c-svg {
+  display: inline-block;
+  fill: currentColor;
+  vertical-align: top;
+}
+
+.ib {
+  display: inline-block;
+}
+
+/* -----------------------------------------------
+* Page エントリーポイント
+-------------------------------------------------- */
+
+@media only screen and (min-width: 751px) {
+  .inner-block {
+    max-width: 1000px;
+  }
+  .sp {
+    display: none !important;
+  }
+  a[href^="tel:"] {
+    pointer-events: none;
+  }
+  a,
+a::before,
+a::after,
+button {
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  .quiz-question {
+    padding: 30px 20vw 0px;
+  }
+  .quiz-answer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 0 10vw 60px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  body {
+    font-size: 14px;
+    position: relative;
+    -webkit-appearance: none;
+    -webkit-text-size-adjust: 100%;
+    padding-top: 10%;
+  }
+  .outer-block {
+    min-width: 320px;
+  }
+  .inner-block {
+    padding: 0 15px;
+    width: auto;
+  }
+  #wrapper {
+    min-width: 320px;
+    position: relative;
+    overflow: hidden;
+  }
+  input[type=submit] {
+    -webkit-text-size-adjust: 100%;
+  }
+  input,
+select,
+textarea {
+    font-size: 16px !important;
+  }
+  .pc {
+    display: none !important;
+  }
+  .quiz {
+    padding: 70px 0;
+  }
+  .quiz-content {
+    padding: 40px 30px 60px;
+  }
+  .quiz-question-number {
+    font-size: 16px;
+    padding: 0 20px 20px;
+  }
+  .quiz-question {
+    padding-top: 20px;
+    font-size: 20px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  .quiz-answer {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 0;
+    gap: 8px;
+  }
+  .quiz-answer::before {
+    top: 0;
+    width: 200px;
+    height: 200px;
+    font-size: 200px;
+  }
+  .quiz-answer li label {
+    font-size: 14px;
+    height: 44px;
+  }
+  .quiz-answer li::after {
+    top: 2px;
+    left: 14px;
+    width: 32px;
+    height: 27px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .quiz-question {
+    padding: 30px 200px 0px;
+  }
+  .quiz-answer {
+    padding: 0 200px 100px;
+  }
+}
