@@ -10,7 +10,7 @@
     const prefecturalCapital = [
       {
         id: "01",
-        question: "次の文章はデザインの４原則のうち何に当たるでしょうか？【要素に区別を付けること。ページ画面上の要素にメリハリがつき、視覚的に面白さをつくり出すことにも役立つ】",
+        question: "要素に区別を付けることでページ画面上の要素にメリハリがつき、視覚的に面白さをつくり出すことにも役立つ原則は何という？",
         answer01: "コントラスト",
         answer02: "近接",
         answer03: "反復",
@@ -18,7 +18,7 @@
       },
       {
         id: "02",
-        question: "次の文章はデザインの４原則のうち何に当たるでしょうか？【関連する項目を物理的にまとめてグループ化すること。関連する項目を近づけることで、それらが関連することを視覚的に表現することができます。】",
+        question: "関連する項目を物理的にまとめてグループ化し、関連する項目を近づけることで、それらが関連することを視覚的に表現することができる原則は何という？",
         answer01: "近接",
         answer02: "コントラスト",
         answer03: "反復",
@@ -26,7 +26,7 @@
       },
       {
         id: "03",
-        question: "次の文章はデザインの４原則のうち何に当たるでしょうか？【ページ上のすべての要素を意識的に整えて配列すること。そうすることで要素が互いに関連し、一体性を持ちます】",
+        question: "ページ上すべての要素を意識的に整えて配列し、そうすることで要素が互いに関連し、一体性を持つことができる原則は何という？",
         answer01: "整列",
         answer02: "コントラスト",
         answer03: "反復",
@@ -34,7 +34,7 @@
       },
       {
         id: "04",
-        question: "次の文章はデザインの４原則のうち何に当たるでしょうか？【デザイン上の特徴を作品全体を通して繰り返すことです。フォント、色、配置などの特徴を、作品全体で繰り返し使うことで、視覚的な一貫性が生まれ】",
+        question: "デザイン上の特徴を作品全体を通して繰り返し、フォント、色、配置などの特徴を、作品全体で繰り返し使うことで、視覚的な一貫性が生まれる原則を何という？",
         answer01: "反復",
         answer02: "コントラスト",
         answer03: "近接",
@@ -49,7 +49,7 @@
         answer04: "モッツァレラチーズ",
       },
     ];
-  
+
     //質問をランダムにする
     function shuffleQuiz(array) {
       for (let i = (array.length - 1); 0 < i; i--) {
@@ -155,7 +155,7 @@
 
                 //回答のシャッフル
                 _this.shuffleAnswer($('.quiz-answer'));
-   
+
               }, 1000);
             }
             return false;
@@ -172,14 +172,14 @@
         },
         changeQuestion: function (nextQuestion) {
           let _this = this;
-   
+
           //質問文の入れ替え
           _this.$questionName.text(nextQuestion.question );
-   
+
           //質問番号を1つ増やす
           let numPlusOne = $currentNum + 1;
           _this.$questionNumber.text('質問' + numPlusOne);
-   
+
           //選択肢のテキストの入れ替え
           _this.$answer01.text(nextQuestion.answer01);
           _this.$answer02.text(nextQuestion.answer02);
@@ -196,10 +196,10 @@
       };
       return Obj;
     })();
-   
+
     let quiz = $('.quiz');
     if (quiz[0]) {
       let queInstance = new questionObject(quiz);
     }
-   
+
   })(jQuery);
