@@ -1,30 +1,92 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/icon.png">
     <title>デザモルACADEMY_Top</title>
-    <link rel="stylesheet" type="text/css" href="./css/top.css">
+    <link rel="stylesheet" type="text/css" href="css/top.css">
+    <script src="js/script.js"></script>
 </head>
-<body id="main-visual">
-<link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
-<h1>デザモル<br>
-    <img src="img/star3.png" width="50" height="50">
-    <img src="img/star2.png" width="50" height="50">
-    <img src="img/star1.png" width="50" height="50">
-    <img src="img/moru.png" width="180" height="120">
-    <img src="img/star1.png" width="50" height="50">
-    <img src="img/star2.png" width="50" height="50">
-    <img src="img/star3.png" width="50" height="50">
-    <br>アカデミー</h1>
-<div class="btn press"><a href="quiz.html">クイズをする</a></div>
-    <!-- <div class="btn press"><a href="story.html">物語を読む</a></div> -->
+
+<body>
+    <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
+    <audio id="pinpon" src="mp3/Triple_Time.mp3"></audio>
+    <h1>デザモル<br>
+        <img src="img/star3.png" class="hidden-on-mobile resize">
+        <img src="img/star2.png" class="hidden-on-mobile resize">
+        <img src="img/star1.png" class="resize">
+        <img src="img/moru.png" class="m-resize">
+        <img src="img/star1.png" class="resize">
+        <img src="img/star2.png" class="hidden-on-mobile resize">
+        <img src="img/star3.png" class="hidden-on-mobile resize">
+        <br>アカデミー
+    </h1>
+<p>デザインの勉強やデザインに関するさまざまな情報を提供しております。<br>
+    <span class="catch">さぁ、一緒にデザインをモルっと楽しく学ぼう！</span>
+</p>
+    <div class="card-container">
+        <div class="card">
+            <a href="lesson1.html">
+                <img src="img/flower.png">
+                <dt>初めてのデザイン</dt>
+                <dd>デザインの基本四原則や、デザインをどう考えればよいのか解説します。</dd>
+            </a>
+        </div>
+        <div class="card">
+            <img src="img/flower.png">
+            <dt>デザインの歴史</dt>
+            <dd>デザインについて振り返り、「デザイン」という意味を理解しよう。</dd>
+        </div>
+        <div class="card">
+            <img src="img/flower.png">
+            <dt>奥深いフォントの世界</dt>
+            <dd>フォントの種類によって印象は大きく変わります。フォントの奥深い世界をのぞこう。</dd>
+        </div>
+        <div class="card">
+            <img src="img/flower.png">
+            <dt>ユーザーヒアリング</dt>
+            <dd>ヒアリング力を前進させるためのマインドとメソッドについて</dd>
+        </div>
+        <div class="card intro-card">
+            <img src="img/lock.png">
+            <dt>Figma入門</dt>
+            <dd>新しいデザインツールとして注目を浴びる「Figma」について学べるカリキュラムです。</dd>
+        </div>
+        <div class="card intro-card">
+            <img src="img/lock.png">
+            <dt>STUDIO入門</dt>
+            <dd>コーディングなしでWebサイトがつくれるデザインツール「STUDIO」について学ぼう。</dd>
+        </div>
+        <div class="card intro-card">
+            <img src="img/lock.png">
+            <dt>WordPress入門</dt>
+            <dd>世界で最も利用されているサイトが多いCMS「WordPress」について学ぼう。</dd>
+        </div>
+        <div class="card intro-card">
+            <img src="img/lock.png">
+            <dt>Photoshop入門</dt>
+            <dd>写真補正や画像合成などが行える「Photoshop」について勉強しましょう。</dd>
+        </div>
+    </div>
 
     <!-- ログインと新規登録のリンク -->
     <div class="user-links">
         <a href="login.html">ログイン</a>
         <a href="membership.php">新規登録</a>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          var audio = document.getElementById('pinpon');
+          audio.play().catch(function(error) {
+            console.log("自動再生がブロックされました: ", error);
+          });
+        });
+      </script>
+
 </body>
+
+
 </html>
-
-
