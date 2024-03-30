@@ -4,20 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="css/login.css">
     <title>新規会員登録</title>
 </head>
 <body>
 
 <form action="insert.php" method="post">
     <main>
-<h2>新規会員登録</h2>
-
-    <label for="username">名前:</label>
-    <input type="text" id="username" name="username" required><br>
-    <label for="email">メールアドレス:</label>
-    <input type="email" id="email" name="email" required><br>
-
+<h2>アカウント登録</h2>
+    <label for="name">ニックネーム</label>
+    <input type="text" id="name" name="name" required><br>
+    <label for="lid">メールアドレス</label>
+    <input type="email" id="lid" name="lid" required><br>
+    <label for="lpw">パスワード</label>
+    <input type="password" class="form-control" id="lpw" name="lpw" required>
 <p>
     <input type="submit" value="登録する">
 </p>
@@ -30,17 +30,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // フォームが送信されたときの処理
 
     // 入力データの取得
-    $username = $_POST["name"];
-    $email = $_POST["email"];
-
-    // ここでデータベースにデータを保存するなどの処理を行います
+    $name = $_POST["name"];
+    $lid = $_POST["lid"];
+    // $lpw = $_POST["lpw"];
+    //ハッシュ化
+    $lpw = password_hash($id, PASSWORD_DEFAULT);
 
     // 例: ファイルに保存する場合
-    $file = fopen("users.txt", "a");
-    fwrite($file, "$name, $email");
-    fclose($file);
+//     $file = fopen("users.txt", "a");
+//     fwrite($file, "$name, $email");
+//     fclose($file);
 
-    echo "登録が完了しました。";
+//     echo "登録が完了しました。";
+//
 }
 ?>
 
